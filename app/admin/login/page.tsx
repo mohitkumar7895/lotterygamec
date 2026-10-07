@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
@@ -88,15 +87,6 @@ export default function AdminLoginPage() {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
-
-        <div className="mt-6 border-t border-gray-100 pt-4 text-center">
-          <Link
-            href="/"
-            className="text-xs text-gray-400 hover:text-gray-600 transition"
-          >
-            ← Back to Home
-          </Link>
-        </div>
       </div>
     </main>
   );
