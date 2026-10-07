@@ -90,23 +90,12 @@ export default function AdminLoginPage() {
         </form>
 
         <div className="mt-6 border-t border-gray-100 pt-4 text-center">
-          <p className="text-sm text-gray-600">
-            Don&apos;t have an account?{" "}
-            <Link
-              href="/admin/register"
-              className="font-semibold text-green-700 hover:text-green-800 hover:underline"
-            >
-              Register here
-            </Link>
-          </p>
-          <div className="mt-3">
-            <Link
-              href="/"
-              className="text-xs text-gray-400 hover:text-gray-600 transition"
-            >
-              ← Back to Home
-            </Link>
-          </div>
+          <Link
+            href="/"
+            className="text-xs text-gray-400 hover:text-gray-600 transition"
+          >
+            ← Back to Home
+          </Link>
         </div>
       </div>
     </main>
