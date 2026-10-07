@@ -1,0 +1,52 @@
+import Banner from "@/components/Banner";
+import Ticker from "@/components/Ticker";
+import CheckResultForm from "@/components/CheckResultForm";
+import ResultSection from "@/components/ResultSection";
+import Link from "next/link";
+
+// ============================================================================
+// 🔴 ERROR TOGGLE:
+// Error dikhane ke liye: true
+// Error hatane ke liye : false
+// ============================================================================
+const SHOW_ERROR = false;
+
+export default function HomePage() {
+  if (SHOW_ERROR) {
+    return (
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 999999,
+          backgroundColor: "#ffffff",
+          color: "#dc2626",
+          fontFamily:
+            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace',
+          padding: "24px",
+        }}
+      >
+        <p style={{ margin: 0, fontSize: "14px", fontWeight: 500, lineHeight: 1.5 }}>
+          Unhandled Runtime Error: Critical system failure! Connection to database and API services refused (ERR_CONNECTION_REFUSED).
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen pb-10">
+      <main className="mx-auto w-full max-w-lg px-3 pt-4 sm:px-4 sm:pt-6">
+        <Banner />
+      </main>
+
+      <div className="mx-auto my-5 w-full max-w-4xl px-3 sm:px-4">
+        <Ticker />
+      </div>
+
+      <main className="mx-auto w-full max-w-lg px-3 sm:px-4">
+        <CheckResultForm />
+        <ResultSection />
+      </main>
+    </div>
+  );
+}
